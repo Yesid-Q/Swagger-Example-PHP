@@ -1,0 +1,394 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel OpenApi Demo Documentation",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://app1.test/api/"
+        }
+    ],
+    "paths": {
+        "api/v1/example": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Get list of example",
+                "description": "Returns list of example",
+                "operationId": "bb1661d24f6479988ea5b3117854fe93",
+                "responses": {
+                    "200": {
+                        "description": "Resource Example",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "title": {
+                                                "description": "Return title of example",
+                                                "type": "string",
+                                                "example": "example1"
+                                            },
+                                            "description": {
+                                                "description": "Return description of example",
+                                                "type": "string",
+                                                "example": "description example"
+                                            },
+                                            "counter": {
+                                                "description": "Return number of example",
+                                                "type": "integer"
+                                            },
+                                            "created_at": {
+                                                "description": "Return datetime created",
+                                                "type": "string",
+                                                "format": "date-time"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/v1/example": {
+            "post": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Create example",
+                "operationId": "728d17cde280f9f34cf2c68cfb13a316",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "counter"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "example1"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "description example"
+                                    },
+                                    "counter": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "title": {
+                                            "description": "Return title of example",
+                                            "type": "string",
+                                            "example": "example1"
+                                        },
+                                        "description": {
+                                            "description": "Return description of example",
+                                            "type": "string",
+                                            "example": "description example"
+                                        },
+                                        "counter": {
+                                            "description": "Return number of example",
+                                            "type": "integer"
+                                        },
+                                        "created_at": {
+                                            "description": "Return datetime created",
+                                            "type": "string",
+                                            "format": "date-time"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/v1/example/{id}": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Example show",
+                "operationId": "cdcc3c0722f89682b6cc0129c2d5f735",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "title": {
+                                            "description": "Return title of example",
+                                            "type": "string",
+                                            "example": "example1"
+                                        },
+                                        "description": {
+                                            "description": "Return description of example",
+                                            "type": "string",
+                                            "example": "description example"
+                                        },
+                                        "counter": {
+                                            "description": "Return number of example",
+                                            "type": "integer"
+                                        },
+                                        "created_at": {
+                                            "description": "Return datetime created",
+                                            "type": "string",
+                                            "format": "date-time"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Example destroy",
+                "operationId": "f270d43fdbd0878ea23c9d87ec17b181",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Example edit",
+                "operationId": "91ae1ec879edd35f939ea59446283b25",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "title": {
+                                            "description": "Return title of example",
+                                            "type": "string",
+                                            "example": "example1"
+                                        },
+                                        "description": {
+                                            "description": "Return description of example",
+                                            "type": "string",
+                                            "example": "description example"
+                                        },
+                                        "counter": {
+                                            "description": "Return number of example",
+                                            "type": "integer"
+                                        },
+                                        "created_at": {
+                                            "description": "Return datetime created",
+                                            "type": "string",
+                                            "format": "date-time"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/path/{id}": {
+            "put": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Example update",
+                "operationId": "d66e0d1fd5b4c064b603cc7a53aa1c0b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "counter"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "example1"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "description example"
+                                    },
+                                    "counter": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "title": {
+                                            "description": "Return title of example",
+                                            "type": "string",
+                                            "example": "example1"
+                                        },
+                                        "description": {
+                                            "description": "Return description of example",
+                                            "type": "string",
+                                            "example": "description example"
+                                        },
+                                        "counter": {
+                                            "description": "Return number of example",
+                                            "type": "integer"
+                                        },
+                                        "created_at": {
+                                            "description": "Return datetime created",
+                                            "type": "string",
+                                            "format": "date-time"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "App1",
+            "description": "API Endpoints of App1"
+        }
+    ],
+    "security": [
+        {
+            "passport": {
+                "type": "oauth2",
+                "description": "Laravel passport oauth2 security.",
+                "in": "header",
+                "scheme": "https",
+                "flows": {
+                    "password": {
+                        "authorizationUrl": "http://localhost/oauth/authorize",
+                        "tokenUrl": "http://localhost/oauth/token",
+                        "refreshUrl": "http://localhost/token/refresh",
+                        "scopes": []
+                    }
+                }
+            }
+        }
+    ]
+}
