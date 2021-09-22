@@ -10,7 +10,7 @@ class ExampleController extends Controller
     /**
      * @OA\Get(
      *      tags={"Example"},
-     *      path="api/v1/example",
+     *      path="/v1/example",
      *      summary="Get list of example",
      *      description="Returns list of example",
      *      @OA\Response(
@@ -63,7 +63,7 @@ class ExampleController extends Controller
     /**
      * @OA\Post(
      *   tags={"Example"},
-     *   path="/api/v1/example",
+     *   path="/v1/example",
      *   summary="Create example",
      *   @OA\RequestBody(
      *     required=true,
@@ -127,7 +127,7 @@ class ExampleController extends Controller
     /**
      * @OA\Get(
      *   tags={"Example"},
-     *   path="/api/v1/example/{id}",
+     *   path="/v1/example/{id}",
      *   summary="Example show",
      *   @OA\Parameter(
      *     name="id",
@@ -175,7 +175,7 @@ class ExampleController extends Controller
     /**
      * @OA\Put(
      *   tags={"Example"},
-     *   path="/api/path/{id}",
+     *   path="/example/{id}",
      *   summary="Example update",
      *   @OA\Parameter(
      *     name="id",
@@ -245,7 +245,7 @@ class ExampleController extends Controller
     /**
      * @OA\Patch(
      *   tags={"Example"},
-     *   path="/api/v1/example/{id}",
+     *   path="/v1/example/{id}",
      *   summary="Example edit",
      *   @OA\Parameter(
      *     name="id",
@@ -294,7 +294,7 @@ class ExampleController extends Controller
     /**
      * @OA\Delete(
      *   tags={"Example"},
-     *   path="/api/v1/example/{id}",
+     *   path="/v1/example/{id}",
      *   summary="Example destroy",
      *   @OA\Parameter(
      *     name="id",

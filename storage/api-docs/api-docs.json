@@ -6,26 +6,22 @@
         "contact": {
             "email": "admin@admin.com"
         },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-        },
         "version": "1.0.0"
     },
     "servers": [
         {
-            "url": "http://app1.test/api/"
+            "url": "http://127.0.0.1:8000/api/"
         }
     ],
     "paths": {
-        "api/v1/example": {
+        "/v1/example": {
             "get": {
                 "tags": [
                     "Example"
                 ],
                 "summary": "Get list of example",
                 "description": "Returns list of example",
-                "operationId": "bb1661d24f6479988ea5b3117854fe93",
+                "operationId": "5bc5f1d9cc2ef56b75f426fcdca8bf16",
                 "responses": {
                     "200": {
                         "description": "Resource Example",
@@ -68,15 +64,13 @@
                         "description": "Forbidden"
                     }
                 }
-            }
-        },
-        "/api/v1/example": {
+            },
             "post": {
                 "tags": [
                     "Example"
                 ],
                 "summary": "Create example",
-                "operationId": "728d17cde280f9f34cf2c68cfb13a316",
+                "operationId": "59f25175e59c280fd72417c7c6645c93",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -145,13 +139,13 @@
                 }
             }
         },
-        "/api/v1/example/{id}": {
+        "/v1/example/{id}": {
             "get": {
                 "tags": [
                     "Example"
                 ],
                 "summary": "Example show",
-                "operationId": "cdcc3c0722f89682b6cc0129c2d5f735",
+                "operationId": "bdd5b4b6050b6cb39787e0bacd3f297c",
                 "parameters": [
                     {
                         "name": "id",
@@ -204,7 +198,7 @@
                     "Example"
                 ],
                 "summary": "Example destroy",
-                "operationId": "f270d43fdbd0878ea23c9d87ec17b181",
+                "operationId": "956c0ef7089754f91280af420db47d85",
                 "parameters": [
                     {
                         "name": "id",
@@ -229,7 +223,7 @@
                     "Example"
                 ],
                 "summary": "Example edit",
-                "operationId": "91ae1ec879edd35f939ea59446283b25",
+                "operationId": "b9abb2d7547e91e781d665cf410a4765",
                 "parameters": [
                     {
                         "name": "id",
@@ -281,13 +275,13 @@
                 }
             }
         },
-        "/api/path/{id}": {
+        "/example/{id}": {
             "put": {
                 "tags": [
                     "Example"
                 ],
                 "summary": "Example update",
-                "operationId": "d66e0d1fd5b4c064b603cc7a53aa1c0b",
+                "operationId": "570028b59cde82232a0cff7465884914",
                 "parameters": [
                     {
                         "name": "id",
